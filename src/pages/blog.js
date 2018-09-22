@@ -1,20 +1,23 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const BlogPage = ({data}) => {
-    const {edges: posts} = data.allMarkdownRemark;
-    return(
+const BlogPage = ({ data }) => {
+    const { edges: posts } = data.allMarkdownRemark;
+    return (
         <div>
-            {posts.map (({node: post})=>{
-                const {frontmatter} = post;
+            {posts.map(({ node: post }) => {
+                const { frontmatter } = post;
                 return (
                     <div>
-                        <h2>
-                            <Link to={frontmatter.path}>
-                                {frontmatter.title}
-                            </Link>
-                        </h2>
-                        <p>{frontmatter.date}</p>
+                        <p>
+                            <h2>
+                                <Link to={frontmatter.path}>
+                                    {frontmatter.title}
+                                </Link>
+                            </h2>
+                            <h4>By: {frontmatter.author}</h4>
+                            <h4>{frontmatter.date}</h4>
+                        </p>
                         <p>{frontmatter.excerpt}</p>
                     </div>
                 );
@@ -36,6 +39,7 @@ export const query = graphql`
                         path
                         tags
                         excerpt
+                        author
                     }
                 }
             }

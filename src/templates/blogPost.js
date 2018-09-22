@@ -1,19 +1,38 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
-const Template = ({data, location}) => {
-    const {markdownRemark: post} = data
-    const {frontmatter, html} = post
+const TitleBlock = styled.div`
+    margin-bottom: 1rem;
+    h2{
+        font-size: 2rem;
+        margin: 0;
+        padding: 0:
+        line-height: 2.1;
+    }
+    h4{
+        line-height: 1.1;
+        margin: 0;
+        padding: .1rem;
+    }
+`;
+
+const Template = ({ data, location }) => {
+    const { markdownRemark: post } = data
+    const { frontmatter, html } = post
 
     return (
         <div>
             {console.log(frontmatter.title)}
             <Helmet title={`${frontmatter.title} - My Blog`} />
             <div>
-                <h1>{frontmatter.title}</h1>
-                <h3>{frontmatter.date}</h3>
-                <div dangerouslySetInnerHTML={{__html: html}}/>
+                <TitleBlock>
+                    <h2>{frontmatter.title}</h2>
+                    <h4>By: {frontmatter.author}</h4>
+                    <h4>{frontmatter.date}</h4>
+                </TitleBlock>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
         </div>
     )
@@ -29,9 +48,10 @@ export const pageQuery = graphql`
                 path
                 tags
                 excerpt
+                author
             }
         }
     }
     `
 
-    export default Template;
+export default Template;

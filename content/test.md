@@ -1,25 +1,36 @@
 ---
 
-path: '/test'
+path: '/thoughts_on_gatsby'
 
-date: '2018-09-11T06:45:33+00:00'
+date: '2018-09-20T18:30:00+00:00'
 
-title: "Test Blog"
+title: "Initial Thoughts on Using Gatsby"
 
-tags: ['test', 'qa', 'developmnent']
+tags: ['gatsby', 'development', 'blog','react','graphql']
+
+author: "Chris Kujawa"
 
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et volutpat massa, sit amet rhoncus est. Curabitur leo nisl, accumsan dictum velit eu, aliquet pellentesque ligula. Integer aliquam lectus a risus consectetur, ac gravida ipsum molestie. Donec sit amet luctus urna, vitae vehicula sem. Nam erat lectus, blandit et euismod id, feugiat ac ligula."
 
 ---
 
-##Test
+##How I Got Here
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque orci nulla, id egestas lectus porta at. Morbi fermentum arcu in elit tempus, ac egestas ex bibendum. Quisque quis urna velit. Mauris nec dapibus nisl. Sed at commodo purus. In vitae nibh ante. Nunc maximus elit felis, vel mollis mi viverra pretium. Donec sapien sapien, cursus sed quam eget, imperdiet consectetur leo. Pellentesque quis arcu semper, vestibulum mi sit amet, malesuada urna.
+First things first. 
 
-Phasellus id ante commodo, vestibulum nibh non, convallis magna. Nunc accumsan viverra magna et sodales. Nam gravida, felis in tincidunt gravida, libero nisi placerat leo, ut mattis massa turpis non odio. Nunc nec ipsum justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl lorem, vehicula et felis nec, tristique dignissim sapien. Quisque eleifend tellus dignissim diam convallis, vitae laoreet lacus cursus. Aliquam eget quam tortor.
+I'm Chris, and I am a software engineer that loves doing web development work. While I have worked primarily with Enterprise Java applications over the 10+ years I've done software development professionally, my favorite projects have ALWAYS involved working on web based user interfaces. Almost all of my personal projects have been in that space as well.  So as I look to leave the 9-5 and work as a freelance developer, it seemed only natural that I would focus on what I loved. 
 
-Sed laoreet suscipit augue vitae mattis. Pellentesque vel sem eu justo convallis malesuada id sit amet enim. Duis non nisl a velit vestibulum accumsan. Nullam eros libero, mattis non auctor id, gravida vel libero. Quisque arcu augue, fermentum ac odio a, maximus sagittis tortor. Mauris eu diam id tellus lacinia dictum. Morbi tristique porttitor pretium. Aliquam maximus, mauris et aliquet accumsan, odio orci eleifend ipsum, id elementum neque leo et purus. Morbi id dignissim elit, ac eleifend nunc. Vestibulum purus leo, imperdiet eu imperdiet quis, rutrum et quam. Fusce fermentum, mauris sit amet dapibus porta, nisi est pharetra lectus, sed dapibus libero justo eu sapien. Proin tempus pretium odio, sit amet fermentum nunc auctor sit amet. Nunc nec ultricies diam. Morbi id nulla ac est sollicitudin laoreet nec ut sem. Nullam eu accumsan dui, nec varius tortor.
+**BUT**, since all of what I have worked on to date has been for specific companies, my public portfolio is a bit lacking. So I decided to fix that. I considered several different ways of doing that: a static html page? Too simple for my taste. Besides, I want a blog. Wordpress? Good option--and I've done a fair amount of work with it in the past--but I wanted something that I could truly call my own, not just a custom theme in a large, pre-made CMS. Then it struck me. I had just finished a React course put out by Wes Bos (props to the guys at Syntax.fm!) and would love to do a blog using that. But how? And then I stumbled across Gatsby (and a course by Wes' counterpart on Syntax, Scott Tolinski)--and that was it. It's fast, realatively easy to use, and downright fun to work with. So I rolled up my sleeves and got to work.
 
-Quisque fringilla ut tellus in elementum. Nam maximus a est sed imperdiet. Aliquam semper lorem nec arcu fermentum fringilla. Suspendisse dolor ipsum, accumsan sed viverra vitae, blandit blandit orci. Quisque viverra turpis vitae volutpat tempor. Quisque semper, odio at maximus mollis, eros nisl rhoncus sem, at tristique ligula metus a felis. Etiam molestie, orci vitae posuere tempor, orci augue gravida turpis, quis rhoncus dui arcu non elit. Phasellus euismod leo quis bibendum blandit. Suspendisse porttitor nisl et enim porttitor varius. Quisque lobortis interdum velit, vitae lacinia tellus vestibulum eget. Vestibulum blandit metus gravida diam semper rutrum. Praesent tincidunt mauris turpis, ac laoreet sapien congue in. Fusce vitae odio non libero volutpat tincidunt ut vel urna. Aenean et blandit mi.
+##My Impressions
 
-Pellentesque posuere leo magna, dignissim placerat dolor tincidunt et. Etiam eros neque, aliquet vitae eleifend id, viverra sed ligula. Nulla congue turpis et sem gravida viverra. Duis interdum sem quam, non hendrerit neque tempus non. Aenean aliquet sed sapien eu dignissim. Sed consequat turpis ut tellus varius, in mattis eros venenatis. Proin eu bibendum magna, nec facilisis ipsum. Integer lacinia ac nunc nec ultricies. Pellentesque leo felis, consequat at lobortis et, sagittis in metus. Fusce vitae ullamcorper libero. Morbi eu feugiat orci. Pellentesque ligula sem, molestie id vulputate quis, tempor quis felis. Maecenas congue sed ante non porttitor. Ut in augue ac lacus placerat interdum nec sed dui. Sed quis ullamcorper risus. Etiam facilisis congue blandit.
+Let me just say I love working with Gatsby. Within less than a half an hour I had a working site up and running and was well on my way to having a working blog--even if it didn't look quite polished yet. Of course, it doesn't hurt that to get the site rolling I initialized it with this:
+
+~~~
+gatsby new comic-blog
+~~~
+
+Pretty simple. And the code is pretty clean too. It *did* take me a minute to orient myself to the CSS since it's not my typical style, but once I figured out what was going on...well, it's CSS. Besides, I learned a thing or two reading through their CSS so it's all good.
+
+One other thing I really like about this is the speed at which the pages render in the browser. When using `gatsby develop` the pages automatically re-load in your browser when you save edits. And they reload FAST. I really have to pay attention sometimes to see if the page reloaded or not. The only times I've noticed this not to be the case are when you edit the config file (understandable) or when you edit a blog post using markdown.
+
