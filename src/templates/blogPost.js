@@ -18,9 +18,11 @@ const TitleBlock = styled.div`
     }
 `;
 
-const Template = ({ data, location }) => {
-    const { markdownRemark: post } = data
-    const { frontmatter, html } = post
+const Template = ({ data, location, pathContext }) => {
+    const { markdownRemark: post } = data;
+    const { frontmatter, html } = post;
+    const { title, date } = frontmatter;
+    const { next, prev } = pathContext;
 
     return (
         <div>
@@ -33,6 +35,20 @@ const Template = ({ data, location }) => {
                     <h4>{frontmatter.date}</h4>
                 </TitleBlock>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
+                <p>
+                    {prev &&
+                        <Link to={prev.frontmatter.path}>
+                            Previous: {prev.frontmatter.title}
+                        </Link>
+                    }
+                </p>
+                <p>
+                    {next &&
+                        <Link to={next.frontmatter.path}>
+                            Next: {next.frontmatter.title}
+                        </Link>
+                    }
+                </p>
             </div>
         </div>
     )
