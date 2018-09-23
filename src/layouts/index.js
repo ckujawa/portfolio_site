@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import Footer from '../components/footer'
 import './index.css'
 
 const Layout = ({ children, data }) => (
@@ -18,16 +19,21 @@ const Layout = ({ children, data }) => (
     <div
       style={{
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
         margin: '0 auto',
         maxWidth: 1200,
-        padding: '0px 1.0875rem 1.45rem',
+        padding: '1.5rem',
         paddingTop: 0,
-        height: '85vh'
+        height: '85vh',
+        backgroundColor: '#dd655688'
       }}
     >
       {children()}
+      <Footer />
     </div>
-  </div>
+  </div >
 )
 
 Layout.propTypes = {

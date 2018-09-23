@@ -35,9 +35,21 @@ const HeaderContainer = styled.div`
           margin-right: 1px;
 
           a {
+            display: block;
+            padding: 10px;
+            margin: 0;
             text-decoration: none;
             font-size: 1.75em;
             color: #dd6556;
+            background-color: #7b0e00
+          }
+
+          a:hover {
+            font-weight: bold;
+            color: #510900;
+            background-color: #c63d2b;
+            border: 2px outset #a07514;
+            box-shadow: 5px 5px 10px #510900;
           }
         }
       }
@@ -65,7 +77,7 @@ const Header = ({ siteTitle }) => (
           <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/work">Work</Link>
         </li>
       </nav>
     </HeaderContainer>
