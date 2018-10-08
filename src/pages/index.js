@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
+import Layout from "../components/layout"
 
 import headshot from '../imgs/headshot2.jpg'
 
@@ -41,20 +41,21 @@ const ContentWrapper = styled.div`
     line-height: 1.4rem;
   }
 `;
-const IndexPage = () => (
-  <OuterWrapper>
-    <h1>Websites that Work for You!</h1>
-    <ContentWrapper>
-      <img src={headshot} alt="Chris Kujawa"></img>
-      <div>
-        <p>Hi! I am Chris and I am a web designer and full-stack developer from the state of New Hampshire.
-        I have worked with numerous technologies my 10+ years as a software developer. I enjoy building everything from simple product landing pages
-        to complex, scalable, interactive web applications.</p>
-        <p>If you are the owner of a small business looking to either create or improve your web presence, let's talk.
-        I would love the opportunity to see how I can be of service to you.</p>
-      </div>
-    </ContentWrapper>
-  </OuterWrapper>
-)
 
-export default IndexPage
+export default () => (
+  <Layout>
+    <OuterWrapper>
+      <h1>Websites that Work for You!</h1>
+      <ContentWrapper>
+        <img src={headshot} alt="Chris Kujawa"></img>
+        <div>
+          <p>Hi! I am Chris and I am a web designer and full-stack developer from the state of New Hampshire.
+          I have worked with numerous technologies my 10+ years as a software developer. I enjoy building everything from simple product landing pages
+        to complex, scalable, interactive web applications.</p>
+          <p>If you are the owner of a small business looking to either create or improve your web presence, let's talk.
+        I would love the opportunity to see how I can be of service to you.</p>
+        </div>
+      </ContentWrapper>
+    </OuterWrapper>
+  </Layout>
+) 
