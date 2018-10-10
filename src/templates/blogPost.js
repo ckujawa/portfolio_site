@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Layout from "../components/layout"
 
 const TitleBlock = styled.div`
     margin-bottom: 1rem;
@@ -18,39 +20,41 @@ const TitleBlock = styled.div`
     }
 `;
 
-const Template = ({ data, location, pathContext }) => {
+const Template = ({ data, location, pageContext }) => {
     const { markdownRemark: post } = data;
     const { frontmatter, html } = post;
     const { title, date } = frontmatter;
-    const { next, prev } = pathContext;
+    const { next, prev } = pageContext;
 
     return (
-        <div>
-            {console.log(frontmatter.title)}
-            <Helmet title={`${frontmatter.title} - My Blog`} />
-            <div>
-                <TitleBlock>
-                    <h2>{frontmatter.title}</h2>
-                    <h4>By: {frontmatter.author}</h4>
-                    <h4>{frontmatter.date}</h4>
-                </TitleBlock>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
-                <p>
-                    {prev &&
-                        <Link to={prev.frontmatter.path}>
-                            Previous: {prev.frontmatter.title}
-                        </Link>
-                    }
-                </p>
-                <p>
-                    {next &&
-                        <Link to={next.frontmatter.path}>
-                            Next: {next.frontmatter.title}
-                        </Link>
-                    }
-                </p>
-            </div>
-        </div>
+        <Layout>
+            <article>
+                {console.log(title)}
+                <Helmet title={`${title} - My Blog`} />
+                <div>
+                    <TitleBlock>
+                        <h2>{frontmatter.title}</h2>
+                        <h4>By: {frontmatter.author}</h4>
+                        <h4>{date}</h4>
+                    </TitleBlock>
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <p>
+                        {prev &&
+                            <Link to={prev.frontmatter.path}>
+                                Previous: {prev.frontmatter.title}
+                            </Link>
+                        }
+                    </p>
+                    <p>
+                        {next &&
+                            <Link to={next.frontmatter.path}>
+                                Next: {next.frontmatter.title}
+                            </Link>
+                        }
+                    </p>
+                </div>
+            </article>
+        </Layout>
     )
 }
 

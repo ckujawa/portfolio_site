@@ -1,30 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
-const BlogPage = ({ data }) => {
-    const { edges: posts } = data.allMarkdownRemark;
-    return (
-        <div>
-            {posts.map(({ node: post }) => {
-                const { frontmatter } = post;
-                return (
-                    <div>
-                        <p>
-                            <h2>
-                                <Link to={frontmatter.path}>
-                                    {frontmatter.title}
-                                </Link>
-                            </h2>
-                            <h4>By: {frontmatter.author}</h4>
-                            <h4>{frontmatter.date}</h4>
-                        </p>
-                        <p>{frontmatter.excerpt}</p>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+import { graphql } from 'gatsby'
+import Layout from "../components/layout"
 
 export const query = graphql`
     query IndexQuery {
@@ -47,4 +24,26 @@ export const query = graphql`
     }
 `;
 
-export default BlogPage
+export default ({data}) => (
+    <Layout>
+        <div>
+            {data.allMarkdownRemark.edges.map(({ node: post }) => {
+                const { frontmatter } = post;
+                return (
+                    <div>
+                        <p>
+                            <h2>
+                                <Link to={frontmatter.path}>
+                                    {frontmatter.title}
+                                </Link>
+                            </h2>
+                            <h4>By: {frontmatter.author}</h4>
+                            <h4>{frontmatter.date}</h4>
+                        </p>
+                        <p>{frontmatter.excerpt}</p>
+                    </div>
+                );
+            })}
+        </div>
+    </Layout>
+)
