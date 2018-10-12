@@ -37,11 +37,11 @@ export default ({ children }) => (
             maxWidth: 1200,
             padding: '1.5rem',
             paddingTop: 0,
-            height: '85vh',
             backgroundColor: '#dd655688'
           }}
         >
           {children}
+          <p> </p>
         </div>
       </div >
     )}
