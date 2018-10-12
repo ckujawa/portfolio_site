@@ -5,7 +5,8 @@ import Layout from "../components/layout"
 
 export const query = graphql`
     query IndexQuery {
-        allMarkdownRemark{
+        allMarkdownRemark (sort:{fields: [frontmatter___date], order: DESC})
+            {
             totalCount
             edges {
                 node{
@@ -24,7 +25,7 @@ export const query = graphql`
     }
 `;
 
-export default ({data}) => (
+export default ({ data }) => (
     <Layout>
         <div>
             {data.allMarkdownRemark.edges.map(({ node: post }) => {
