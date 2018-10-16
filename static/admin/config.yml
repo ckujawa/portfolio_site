@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: ckujawa/portfolio_site
+
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: content
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: tags, label: Tags }
+      - { name: author, label: Author }
+      - { name: body, label: Body, widget: markdown }
