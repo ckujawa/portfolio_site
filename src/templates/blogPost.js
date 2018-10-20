@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout"
+import TagLine from "../components/tagLine"
 
 const TitleBlock = styled.div`
     margin-bottom: 1rem;
@@ -38,6 +39,7 @@ const Template = ({ data, location, pageContext }) => {
                         <h4>{date}</h4>
                     </TitleBlock>
                     <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <TagLine tags={frontmatter.tags} />
                     <p>
                         {prev &&
                             <Link to={prev.frontmatter.path}>
