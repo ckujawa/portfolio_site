@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
       margin-bottom: 1.5rem;
 
       h1{
-        margin: 20px 0 0 0;
+        margin: 30px 0 0 0;
         img{
           height: 100px;
           margin-bottom: .5rem;
@@ -38,6 +38,7 @@ const SocialBlock = styled.div`
     height: 2rem;
     overflow: hidden;
     margin-right: 5px;
+    margin-bottom: 10px;
 
     a {
         text-decoration: none;
