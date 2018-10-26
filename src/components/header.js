@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import { FaTwitter } from 'react-icons/fa'
-import { FaGithub } from 'react-icons/fa'
-import { FaSkype } from 'react-icons/fa'
+import { FaTwitter } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { FaSkype } from 'react-icons/fa';
+import Navigator from './navigator';
 
 import logo from '../imgs/logo.svg';
 
@@ -13,7 +14,7 @@ const HeaderWrapper = styled.div`
       margin-bottom: 1.5rem;
 
       h1{
-        margin: 1rem 0 0 0;
+        margin: 20px 0 0 0;
         img{
           height: 100px;
           margin-bottom: .5rem;
@@ -26,46 +27,17 @@ const HeaderContainer = styled.div`
       margin: 0 auto;
       max-width: 1280px;
       padding: 1.45rem 1.0875rem;
-      nav {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        
-        li{
-          display: inline-block;
-          padding: 10px;
-          margin-left: 1px;
-          margin-right: 1px;
-
-          a {
-            display: block;
-            padding: 10px;
-            margin: 0;
-            text-decoration: none;
-            font-size: 1.75em;
-            color: #dd6556;
-            background-color: #7b0e00
-          }
-
-          a:hover {
-            font-weight: bold;
-            color: #510900;
-            background-color: #c63d2b;
-            border: 2px outset #a07514;
-            box-shadow: 5px 5px 10px #510900;
-          }
-        }
-      }
 `;
 
 const SocialBlock = styled.div`
     position: absolute;
     top:  10px;
-    right: 10px;
+    left: 30px;
     padding-right: 10px;
     font-size: 2rem;
     height: 2rem;
     overflow: hidden;
+    margin-right: 5px;
 
     a {
         text-decoration: none;
@@ -79,6 +51,7 @@ const SocialBlock = styled.div`
       background-color: #a07514;
       color: #ddb456;
     }
+
 `;
 
 const Header = ({ siteTitle }) => (
@@ -100,7 +73,8 @@ const Header = ({ siteTitle }) => (
         <a href='https://github.com/ckujawa' title="ckujawa on Github"><FaGithub /></a>
         <a href='skype:cmkujawa?chat' title='cmkujawa on Skype'><FaSkype /></a>
       </SocialBlock>
-      <nav>
+      <Navigator isOpen={false}></Navigator>
+      {/* <nav>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -110,7 +84,7 @@ const Header = ({ siteTitle }) => (
         <li>
           <Link to="/work">Work</Link>
         </li>
-      </nav>
+      </nav> */}
     </HeaderContainer>
   </HeaderWrapper >
 

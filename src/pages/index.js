@@ -6,15 +6,23 @@ import headshot from '../imgs/headshot2.jpg'
 
 const OuterWrapper = styled.div`
   position: absolute;
-  top: 50%;
-  transform: translateY(-60%);
   text-align: center;
+  margin-top: 20px;
 
   h1{
     font-size: 3em;
     font-weight: bold;
     margin: 0;
   }
+
+  @media screen and (max-width: 800px){
+
+    h1{
+      font-size: 2em;
+      padding-bottom: 10px;
+    }
+  }
+
 `;
 
 const ContentWrapper = styled.div`
