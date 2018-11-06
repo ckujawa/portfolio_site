@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: '',
+    title: 'Chris Kujawa Development',
     logo: `${__dirname}/content/img/logo.png`,
   },
   plugins: ['gatsby-plugin-react-helmet',
