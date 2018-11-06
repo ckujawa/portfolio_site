@@ -57,6 +57,7 @@ export default () => (
             <a href="/" className="menu-item" id="home">Home</a>
             <a href="/blog" className="menu-item" id="blog">Blog</a>
             <a href="/work" className="menu-item" id="work">Work</a>
+            <a href="/contact" className="menu-item" id="contact">Contact</a>
         </Menu>
-    </StyledBurgerMenu>
+    </StyledBurgerMenu >
 )

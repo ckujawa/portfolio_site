@@ -23,8 +23,9 @@ export default ({ children }) => (
           meta={[
             { name: 'description', content: 'The portfolio and blog of Chris Kujawa, a full-stack web developer specializing in creating blazingly fast e-commerce sites with Gatsby and React JS.' },
             { name: 'keywords', content: 'web development, web developer, ecommerce development, ecommerce website design, ecommerce website development, ecommerce website developer, ecommerce website, custom ecommerce website, GatsbyJS, GatsbyJS Development, GatsbyJS website, Gatsby ecommerce, ReactJS, React developer' },
-          ]}
-        />
+          ]}>
+          <html lang="en" />
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -35,7 +36,7 @@ export default ({ children }) => (
             margin: '0 auto',
             maxWidth: 1200,
             padding: '1.5rem',
-            paddingTop: 0,
+            paddingTop: '2rem',
             backgroundColor: '#dd655688'
           }}
         >
