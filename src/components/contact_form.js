@@ -89,6 +89,7 @@ const FieldContainer = styled.div`
 const ContactForm = () => (
     <FormWrapper>
         <form name="contact" method="POST" data-netlify="true">
+         <input type="hidden" name="form-name" value="contact" />
             <FieldContainer>
                 <input type="text" name="name" id="name" required />
                 <label for="name">Your Name</label>
