@@ -3,7 +3,7 @@ path: /new_horizons
 date: 2018-11-08T00:13:37.632Z
 title: New Horizons
 tags: >-
-  List["freelancing", "web development", "html", "css", "javascript", "Gatsby",
+  ["freelancing", "web development", "html", "css", "javascript", "Gatsby",
   "React", "eCommerce", "services"]
 author: Chris Kujawa
 ---
