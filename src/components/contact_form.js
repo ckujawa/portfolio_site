@@ -75,14 +75,14 @@ const FieldContainer = styled.div`
 
     
     button {
-        font-family: 'Lobster+Two', cursive;
         font-size: 1.3em;
-        background-color: #003EAA;
+        background-color: #0F5263;
         color: white;
         border: none;
         border-radius: 4px;
         position: absolute;
         right: 2px;
+        padding: 5px;
     }
 `
 
