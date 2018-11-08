@@ -10,7 +10,7 @@ tags: ['gatsby', 'development', 'blog','react','graphql']
 
 author: "Chris Kujawa"
 
-excerpt: "A very brief introduction and my initial thoughts on using Gatsby to create my blog/portfolio."
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et volutpat massa, sit amet rhoncus est. Curabitur leo nisl, accumsan dictum velit eu, aliquet pellentesque ligula. Integer aliquam lectus a risus consectetur, ac gravida ipsum molestie. Donec sit amet luctus urna, vitae vehicula sem. Nam erat lectus, blandit et euismod id, feugiat ac ligula."
 
 ---
 
