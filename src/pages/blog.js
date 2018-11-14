@@ -40,8 +40,8 @@ export default ({ data }) => (
                             </h2>
                             <h4>By: {frontmatter.author}</h4>
                             <h4>{frontmatter.date}</h4>
+                            <p>{frontmatter.excerpt}</p>
                         </p>
-                        <p>{frontmatter.excerpt}</p>
                     </div>
                 );
             })}

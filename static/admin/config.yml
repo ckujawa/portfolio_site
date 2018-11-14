@@ -17,4 +17,5 @@ collections:
       - { name: title, label: Title }
       - { name: tags, label: Tags, widget: list }
       - { name: author, label: Author }
+      - { name: excerpt, label: Excerpt }
       - { name: body, label: Body, widget: markdown }
