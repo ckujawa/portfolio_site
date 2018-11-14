@@ -13,11 +13,11 @@ author: "Chris Kujawa"
 excerpt: "A brief overview of my efforts to migrate to Gatsby 2.0"
 
 ---
-##Let the fun Begin
+###Let the fun Begin
 
 As things often happen, I received a notification that Gatsby 2.0 was released just as I was finishing up the first version of my site. Figures. The work of a developer is never done. It's a fact of life for developers: your work is never done. Along with the additional work to upgrade comes an opportunity to learn though, so we all pretty much dive right in. Here's what happened when I did.
 
-##The Upgrade Process Seems Pretty Easy...
+###The Upgrade Process Seems Pretty Easy...
 
 The official documentation for the migration is located <a href="https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/" target="_blank">on the Gatsby website</a>, but I'll be running through the steps here with commentary. The process starts by upgrading all your project dependencies, starting with Gatsby itself:
 ```
@@ -34,7 +34,7 @@ By do what it says, I mean compare the list of "wanted" vs "latest" and install 
 
 I'm guessing you could also edit your package.json file to update the versions then do an npm install, but that's too much like work for my taste so I didn't try it. I *did* re-run the npm outdated after bringing everything up to the latest version, just to make sure that I got everything. But in spite of my best efforts, I discovered that there were a couple packages that had additional requirements when I ran gatsby develop. The one that I remember off hand was gatsby-plugin-styled-components now requires babel-plugin-styled-components. Don't worry though--the startup will clearly tell you what's missing. Take care of the missing dependencies and you should be good to go.
 
-##But What Happened to my Style?
+###But What Happened to my Style?
 
 At this point, you should be up and running again, and if you're like I was, you're looking at a site with absolutely NO styling applied. This occurs because src/layouts/index.js no longer wraps every page. This means that the top level page is the page itself, and not the layout as it was in v1. What this means to YOU is that you need to move both src/layouts/index.js and any css files that you might be using from src/layouts to src/components. You will then need to convert the layouts's children from a render prop to a normal prop:
 ```
