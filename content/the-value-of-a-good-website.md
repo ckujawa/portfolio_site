@@ -14,13 +14,13 @@ I remember several years back talking to an electrician friend of mine about bui
 
 
 
-## Credibility is Vital
+### Credibility is Vital
 
 I’ve seen several blog posts now that reference a Stanford study that claims that 75% of the people visiting your website will make a judgment on your company’s credibility based on the site’s design. Full disclosure—I’ve tried to go find that specific study myself and have not been able to—though Stanford does offer a page with guidelines on how to generate credibility—and we’ll get there. If ¾ of the people visiting your site determine they don’t trust your company based on a 50ms glance at the site, that is potentially a lot of lost revenue. That’s a strong argument for investing in your online presence if I’ve ever heard one. Let’s look at how we can do that.
 
 
 
-## Design
+### Design
 
 First and foremost, your website should feature a clean, modern design that represents your brand. It should be catchy and make you stand out (in a positive way) from the crowd. If your site looks like something straight from the early 1990’s, people will think you aren’t keeping up with the times and move on. This category includes typography, color scheme, and quality photography among other things. It should all work well together to make a sharp impression of your company on the viewer.
 
@@ -30,7 +30,7 @@ Security of the site is another major concern—especially if you’re accepting
 
 One final thought here: avoid cookie cutter templates and themes. Anyone can buy (or not) one of these and slap a logo on it. But then your site looks just like the sites of thousands of others that have done the same thing. By investing in a professionally designed website, you stand out from the crowd. Additionally, you can customize every aspect of your site to make sure it fully represents your company in a way that ties in with all your other marketing materials. Finally, you can add unique functionality and flare to your site that can really grab your visitor’s attention 
 
-## Content
+### Content
 
 Let’s face it: content is king! It can serve to establish your brand as a powerhouse in your industry—or not. Things like a lack of easily locatable contact info, broken links, and hard to find product/service information make a user doubt that your company is ready and able to serve them. 
 
@@ -38,7 +38,7 @@ On the positive side of things, making that information easily accessible builds
 
 
 
-## Sources
+### Sources
 
 [Your Website May Be Hurting Your Credibility](https://onedaylabs.com/website-may-hurting-online-credibility/)
 
