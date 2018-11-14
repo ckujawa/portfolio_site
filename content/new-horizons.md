@@ -4,6 +4,7 @@ date: 2018-11-08T00:13:37.632Z
 title: New Horizons
 tags: ["freelancing", "web development", "html", "css", "javascript", "Gatsby",
   "React", "eCommerce", "services"]
+excerpt: "I'm formally opened for business..."
 author: Chris Kujawa
 ---
 There are times in your life that it becomes necessary to set your sights on new horizons. That time has recently come for me, and after spending the last four years of my 10-year career as a software developer at the same company, that time has come for me. For reasons that I cannot share here, my wife and I have decided that for us, that time has come. 

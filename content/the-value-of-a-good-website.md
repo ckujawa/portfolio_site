@@ -8,6 +8,7 @@ tags:
   - value
   - marketing
   - branding
+excerpt: "Why is a good website important...and what are some things to consider?"
 author: Chris Kujawa
 ---
 I remember several years back talking to an electrician friend of mine about building him a website as he was looking to strike out on his own. In that conversation, he told me that all his colleagues were telling him that if you do not have a website, you are not going to make it. And I somewhat agree with that statement. In my own search for skilled contractors, the first place I turn to is Google. But I think you will agree when I say that not all websites are created equally. In fact, it only takes a person 50 milliseconds to make a value judgment on your site. So not only do first impressions count, they happen in less time that it will take you to finish reading this sentence!  So how do we make the most of that first instant when someone visits our site? Read on to find out.
@@ -42,8 +43,10 @@ On the positive side of things, making that information easily accessible builds
 
 [Your Website May Be Hurting Your Credibility](https://onedaylabs.com/website-may-hurting-online-credibility/)
 
-[Stanford Guidelines for Web Credibility](http://credibility.stanford.edu/guidelines/index.html#chi00)
+[Stanford Guidelines for Web Credibility
+](http://credibility.stanford.edu/guidelines/index.html#chi00)
 
 [Why Google is Forcing you to Have SSL Certificates on Your Websites](https://serverguy.com/security/google-forcing-ssl-certificate-websites/)
 
-[Don’t Underestimate the Value of Great Web Design](https://www.circlesstudio.com/blog/dont-underestimate-value-great-web-design/)
+[Don’t Underestimate the Value of Great Web Design
+](https://www.circlesstudio.com/blog/dont-underestimate-value-great-web-design/)
