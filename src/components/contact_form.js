@@ -8,18 +8,24 @@ const FormWrapper = styled.div`
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    height: 400px;
+    height: 420px;
     width: 600px;
     border: 1px solid black;
     box-shadow: 3px 4px 20px 3px;
     padding: 0;
-`
+`;
 
 const FieldContainer = styled.div`
     font-size: 1em;
     position: relative;
     width: 80%;
     margin: 1.7em auto; 
+
+    #last-name + label, #last-name{
+        position: absolute;
+        top: -999px;
+        left: -999px;
+    }
 
     input{
         width: 100%;
@@ -73,6 +79,9 @@ const FieldContainer = styled.div`
     -webkit-transition: 0.4s ease all;
     }
 
+    input:invalid, textarea:invalid{
+        box-shadow: none;
+    }
     
     button {
         font-size: 1.3em;
@@ -88,11 +97,15 @@ const FieldContainer = styled.div`
 
 const ContactForm = () => (
     <FormWrapper>
-        <form name="contact" method="POST" netlify>
+        <form name="contact" method="POST" netlify netlify-honeypot='last-name'>
             <input type="hidden" name="form-name" value="contact" />
             <FieldContainer>
                 <input type="text" name="name" id="name" required />
                 <label for="name">Your Name</label>
+            </FieldContainer>
+            <FieldContainer>
+                <input id='last-name' name='last-name' />
+                <label for='last-name'>Your Last Name</label>
             </FieldContainer>
             <FieldContainer>
                 <input id="email" name="email" type="email" required />
@@ -109,6 +122,7 @@ const ContactForm = () => (
             <FieldContainer>
                 <button type="submit">Submit</button>
             </FieldContainer>
+            <div netlify-recaptcha></div>
         </form>
     </FormWrapper>
 )
