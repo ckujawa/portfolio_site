@@ -1,9 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import { FaTwitter } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
-import { FaSkype } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaSkype } from 'react-icons/fa';
 import Navigator from './navigator';
 
 import logo from '../imgs/logo.svg';

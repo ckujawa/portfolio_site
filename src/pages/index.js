@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Layout from "../components/layout"
-
-import headshot from '../imgs/headshot2.jpg'
+import {GlobalStyle} from "../components/global"
+import Header from "../components/header"
+import background from '../imgs/background.jpg'
 
 const OuterWrapper = styled.div`
   position: absolute;
@@ -25,13 +25,42 @@ const OuterWrapper = styled.div`
 
 `;
 
+const IndexLayout = styled.div`
+  background: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,255, 0.4);
+  }
+`;
+
 const ContentWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  width: 600px;
+  height: 400px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  z-index: 5;
+  position: absolute;
+  right: 100px;
+  top: calc(50% - 100px);
 
   img{
     margin: 0 10px;
@@ -41,7 +70,7 @@ const ContentWrapper = styled.div`
   }
   div{
     margin: 0 10px;
-    width: 65%;
+    width: 80%;
     text-align: left;
   }
   p {
@@ -51,11 +80,11 @@ const ContentWrapper = styled.div`
 `;
 
 export default () => (
-  <Layout>
-    <OuterWrapper>
-      <h1>Websites that Work for You!</h1>
+  <IndexLayout>
+    <GlobalStyle/>
+      <Header/>
       <ContentWrapper>
-        <img src={headshot} alt="Chris Kujawa"></img>
+        <h1>Websites that Work for You!</h1>
         <div>
           <p>Hi! I am Chris and I am a web designer and full-stack developer from the state of New Hampshire.
           I have worked with numerous technologies my 10+ years as a software developer. I enjoy building everything from simple product landing pages
@@ -64,6 +93,5 @@ export default () => (
         I would love the opportunity to see how I can be of service to you.</p>
         </div>
       </ContentWrapper>
-    </OuterWrapper>
-  </Layout>
+  </IndexLayout>
 ) 
