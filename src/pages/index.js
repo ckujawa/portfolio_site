@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {GlobalStyle} from "../components/global"
 import Header from "../components/header"
 import background from '../imgs/background.jpg'
+import {Footer} from '../components/footer'
 
 const OuterWrapper = styled.div`
   position: absolute;
@@ -47,15 +48,13 @@ const IndexLayout = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 600px;
   height: 400px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   border-radius: 10px;
   z-index: 5;
   position: absolute;
@@ -76,6 +75,7 @@ const ContentWrapper = styled.div`
   p {
     font-size: 1.3rem;
     line-height: 1.4rem;
+    margin: 15px 0;
   }
 `;
 
@@ -93,5 +93,6 @@ export default () => (
         I would love the opportunity to see how I can be of service to you.</p>
         </div>
       </ContentWrapper>
+      <Footer/>
   </IndexLayout>
 ) 
