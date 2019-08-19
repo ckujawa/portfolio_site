@@ -6,16 +6,18 @@ import Navigator from './navigator';
 import logo from '../imgs/logo.svg';
 
 const HeaderWrapper = styled.header`
-      background: #0F5263;
+      background: black;
       height: 100px;
       margin-bottom: 1.5rem;
       position: relative;
 
       h1{
-        
+          position: absolute;
+          top: 15px;
+          left: 30px;
+
         img{
           height: 75px;
-          margin-bottom: .5rem;
         }
       }
 `;
@@ -28,7 +30,6 @@ const HeaderContainer = styled.div`
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
-    <HeaderContainer>
       <h1>
         <Link
           to="/"
@@ -41,12 +42,13 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <Navigator Bottom="15px" Right="10px"> 
-        <a href="/" className="menu-item" id="home">Home</a>
-        <a href="/blog" className="menu-item" id="blog">Blog</a>
-        <a href="/work" className="menu-item" id="work">Work</a>
-        <a href="/contact" className="menu-item" id="contact">Contact</a>
+        <ul>
+          <li><a href="/" className="menu-item" id="home">Home</a></li>
+          <li><a href="/blog" className="menu-item" id="blog">Blog</a></li>
+          <li><a href="/work" className="menu-item" id="work">Work</a></li>
+          <li><a href="/contact" className="menu-item" id="contact">Contact</a></li>
+        </ul>
       </Navigator>
-    </HeaderContainer>
   </HeaderWrapper >
 
 )

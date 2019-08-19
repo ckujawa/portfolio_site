@@ -52,6 +52,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   width: 600px;
   height: 400px;
   background: rgba(255,255,255,0.7);
@@ -68,8 +69,8 @@ const ContentWrapper = styled.div`
     border-radius: 50%;
   }
   div{
-    margin: 0 10px;
-    width: 80%;
+    margin: 0;
+    width: 90%;
     text-align: left;
   }
   p {

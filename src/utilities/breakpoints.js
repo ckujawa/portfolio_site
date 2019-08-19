@@ -1,7 +1,7 @@
 
 import { css } from 'styled-components';
 
-const size = {
+export const size = {
     //media query breakpoints;
     small: 400,
     med: 960,
