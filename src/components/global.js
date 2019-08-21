@@ -1,7 +1,12 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Arimo|Lato&display=swap');
+
+    :root{
+        --paleBlue: #d6defa;
+        --paleYellow: #faf2d6;
+    }
 
     * {
         box-sizing: border-box;
@@ -19,4 +24,4 @@ export const GlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
         font-family: Arimo sans-serif;
     }
-`;
+`
