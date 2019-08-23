@@ -1,15 +1,17 @@
 ---
-path: '/work/job1'
+path: '/work/dbarnett'
 
 date: '2019-09-21T11:30:00+00:00'
 
-jobName: 'Job 1'
+jobName: 'Debbie Barnett, Author'
 
 technology: 'wordpress'
 
-clientName: 'Client 1'
+clientName: 'Debbie Barnett'
 
-publishedUrl: 'url'
+publishedUrl: 'https://www.debbiebarnettauthor.com'
+
+featuredImage: ../static/assets/img/db_screenshot.png
 ---
 job photo goes here...
 
