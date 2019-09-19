@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 
 import { Capitalize } from '../utilities/utilFuncs'
 
@@ -47,9 +48,36 @@ export const query = graphql`
 `
 
 const WorkDisplay = styled.div`
+  margin-top: 15px;
   display: grid;
   grid-template-columns: repeat(3, 30%);
   grid-template-rows: auto;
+`
+
+const Job = styled.div`
+  padding: 5px;
+
+  img {
+    margin: 5px;
+  }
+
+  a.portfolio-page-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  h2 {
+    text-align: center;
+  }
+`
+const JobDataWrapper = styled.div`
+  margin: 5px;
+  padding: 2px;
+`
+
+const JobDataLabel = styled.span`
+  font-weight: bold;
+  font-variant: small-caps;
 `
 
 export default ({ data }) => (
@@ -73,22 +101,34 @@ export default ({ data }) => (
     <WorkDisplay>
       {data.allFile.nodes.map(({ id, childMarkdownRemark }) => {
         const { frontmatter } = childMarkdownRemark
-        const { html } = childMarkdownRemark
-        console.log({ html })
         return (
-          <div key={id}>
-            <Link to={frontmatter.path}>
+          <Job key={id}>
+            <Link className="portfolio-page-link" to={frontmatter.path}>
               <h2>{frontmatter.jobName}</h2>
+              <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
             </Link>
-            <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-            <p>Client Name: {frontmatter.clientName}</p>
-            <p>Platform: {Capitalize(frontmatter.technology)}</p>
-            <p>
-              This site is currently found{' '}
-              <a href={frontmatter.publishedUrl}>here</a>
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
+            <JobDataWrapper>
+              <p>
+                <JobDataLabel>Client Name:</JobDataLabel>{' '}
+                {frontmatter.clientName}
+              </p>
+              <p>
+                <JobDataLabel>Platform:</JobDataLabel>{' '}
+                {Capitalize(frontmatter.technology)}
+              </p>
+              {frontmatter.publishedUrl === null ||
+              frontmatter.publishedUrl === '' ? (
+                <p>This project is not currently available online</p>
+              ) : (
+                <p>
+                  <JobDataLabel>Url:</JobDataLabel>{' '}
+                  <a href={frontmatter.publishedUrl}>
+                    {frontmatter.publishedUrl}
+                  </a>
+                </p>
+              )}
+            </JobDataWrapper>
+          </Job>
         )
       })}
     </WorkDisplay>
