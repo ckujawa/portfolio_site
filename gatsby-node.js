@@ -5,11 +5,12 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blogPost.js`)
   const tagTemplate = path.resolve('src/templates/postsByTag.js')
+  const projectsTemplate = path.resolve('src/templates/projectTemplate.js')
 
   return graphql(
     `
       {
-        allFile(
+        blogs: allFile(
           filter: { sourceInstanceName: { eq: "content" } }
           sort: {
             fields: childMarkdownRemark___frontmatter___date
@@ -31,13 +32,62 @@ exports.createPages = ({ actions, graphql }) => {
             }
           }
         }
+
+        projects: allFile(filter: { sourceInstanceName: { eq: "work" } }) {
+          nodes {
+            id
+            childMarkdownRemark {
+              html
+              frontmatter {
+                path
+                date
+                jobName
+                technology
+                clientName
+                publishedUrl
+                featuredImage {
+                  absolutePath
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      base64
+                      tracedSVG
+                      aspectRatio
+                      src
+                      srcSet
+                      srcWebp
+                      srcSetWebp
+                      sizes
+                      originalImg
+                      originalName
+                      presentationWidth
+                      presentationHeight
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    const posts = result.data.allFile.nodes
+    const projects = result.data.projects.nodes
+    const posts = result.data.blogs.nodes
+
+    projects.forEach(({ childMarkdownRemark }, index) => {
+      createPage({
+        path: childMarkdownRemark.frontmatter.path,
+        component: projectsTemplate,
+        context: {
+          prev: index === 0 ? null : projects[index - 1].node,
+          next:
+            index + 1 > projects.length - 1 ? null : projects[index + 1].node,
+        },
+      })
+    })
 
     posts.forEach(({ childMarkdownRemark }, index) => {
       createPage({

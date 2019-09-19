@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import { Capitalize } from '../utilities/utilFuncs'
+import { BoldCapsSpan } from '../components/StyledTypography'
 
 export const query = graphql`
   query MyQuery {
@@ -75,11 +76,6 @@ const JobDataWrapper = styled.div`
   padding: 2px;
 `
 
-const JobDataLabel = styled.span`
-  font-weight: bold;
-  font-variant: small-caps;
-`
-
 export default ({ data }) => (
   <Layout>
     <div>
@@ -109,11 +105,11 @@ export default ({ data }) => (
             </Link>
             <JobDataWrapper>
               <p>
-                <JobDataLabel>Client Name:</JobDataLabel>{' '}
+                <BoldCapsSpan>Client Name:</BoldCapsSpan>{' '}
                 {frontmatter.clientName}
               </p>
               <p>
-                <JobDataLabel>Platform:</JobDataLabel>{' '}
+                <BoldCapsSpan>Platform:</BoldCapsSpan>{' '}
                 {Capitalize(frontmatter.technology)}
               </p>
               {frontmatter.publishedUrl === null ||
@@ -121,7 +117,7 @@ export default ({ data }) => (
                 <p>This project is not currently available online</p>
               ) : (
                 <p>
-                  <JobDataLabel>Url:</JobDataLabel>{' '}
+                  <BoldCapsSpan>Url:</BoldCapsSpan>{' '}
                   <a href={frontmatter.publishedUrl}>
                     {frontmatter.publishedUrl}
                   </a>
