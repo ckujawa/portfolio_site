@@ -1,63 +1,89 @@
-import React from "react";
-import Menu from 'react-burger-menu/lib/menus/slide';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import { above } from '../utilities/breakpoints'
 
 const StyledBurgerMenu = styled.div`
-    .bm-item {
-        text-align:center;  
-        display: inline-block;
-        text-decoration: none;
-        margin-bottom: 5vh;
-        color: #d1d1d1;
-        transition: color 0.2s;
-    }
-    .bm-item:hover {
-        color: white;
-    }
-    .bm-burger-button {
-        position: fixed;
-        width: 45px;
-        height: 25px;
-        right: 20px;
-        top:   10px;
-    }
-    .bm-burger-bars {
-        color: #a07514;
-        background: #a07514;;
-    }
-    .bm-cross-button {
-        height: 40px;
-        width: 20px;
-    }
-    .bm-cross {
-        background: #bdc3c7;
-    }
-    .bm-menu {
-        position: relative;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 2.5em 1.5em 0;
-        font-size: 2em;
-    }
-    .bm-morph-shape {
-        fill: #373a47;
-    }
-    .bm-item-list {
-        position: static;
-        color: #b8b7ad;
-    }
+  --menu-width: calc(0.6 * 100vw);
+  overflow: hidden;
 
-    .bm-overlay {
-        background: rgba(0, 0, 0, 0.3);
-    }
-`;
+  nav {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: var(--menu-width);
+    right: calc(var(--menu-width) * -1);
+  }
 
-export default () => (
-    <StyledBurgerMenu>
-        <Menu right>
-            <a href="/" className="menu-item" id="home">Home</a>
-            <a href="/blog" className="menu-item" id="blog">Blog</a>
-            <a href="/work" className="menu-item" id="work">Work</a>
-            <a href="/contact" className="menu-item" id="contact">Contact</a>
-        </Menu>
-    </StyledBurgerMenu >
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: black;
+  }
+
+  .menu_toggle {
+    font-size: 2em;
+    line-height: 2em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+  }
+
+  .menu_toggle:hover,
+  .menu_toggle:focus {
+    color: red;
+  }
+
+  .menu-item {
+    margin: 0 10px;
+    font-family: Arimo sans-serif;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+  }
+
+  ${above.med`
+
+        .menu_toggle{
+            top: -9999px;
+            right: -9999px;
+        }
+        
+        nav {
+            ${props =>
+              props.Bottom ? `bottom: ${props.Bottom};` : 'bottom: auto'}
+            ${props => (props.Right ? `right: ${props.Right};` : 'right: auto')}
+            ${props => (props.Top ? `top: ${props.Top};` : 'top: auto')}
+            ${props => (props.Left ? `left: ${props.Left};` : 'left: auto')}
+            width: auto;
+        }
+
+        ul {
+            display: flex;
+            width: auto;
+        }
+
+        .menu-item{
+            color: white;
+        }
+        
+    `}
+`
+
+export default ({ children, Top, Right, Bottom, Left }) => (
+  <StyledBurgerMenu Top={Top} Right={Right} Bottom={Bottom} Left={Left}>
+    <a href="#main-menu" className="menu_toggle">
+      <FaBars />
+    </a>
+    <nav id="main-menu">
+      <a href="#main-menu-toggle" className="menu_close">
+        <FaTimes />
+      </a>
+
+      {children}
+    </nav>
+  </StyledBurgerMenu>
 )
