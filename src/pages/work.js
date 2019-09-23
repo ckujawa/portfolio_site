@@ -49,9 +49,12 @@ export const query = graphql`
 `
 
 const WorkDisplay = styled.div`
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 15px;
   display: grid;
-  grid-template-columns: repeat(3, 30%);
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: auto;
 `
 

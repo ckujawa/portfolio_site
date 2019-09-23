@@ -4,8 +4,35 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
 
 import { Centered_H2, BoldCapsSpan } from '../components/StyledTypography'
+
+const ProjectDetails = styled.article`
+  width: 90%;
+  margin: 0.5rem auto;
+  display: grid;
+  grid-template-columns: 45% 50%;
+  grid-template-rows: repeat(3, auto);
+
+  div.gatsby-image-wrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  div.details {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.description {
+    grid-column: 1/-1;
+    padding: 1rem;
+  }
+`
 
 const Project = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
@@ -15,22 +42,26 @@ const Project = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <article>
-        {console.log(title)}
-        <Helmet title={`${title} - My Blog`} />
-        <Centered_H2>{frontmatter.jobName}</Centered_H2>
+      <Helmet title={`${title} - My Blog`} />
+      <Centered_H2>{frontmatter.jobName}</Centered_H2>
+      <ProjectDetails>
         <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-        <p>
-          <BoldCapsSpan>Client:</BoldCapsSpan> {frontmatter.clientName}
-        </p>
-        <p>
-          <BoldCapsSpan>Technology:</BoldCapsSpan> {frontmatter.technology}
-        </p>
-        <p>
-          <BoldCapsSpan>Url:</BoldCapsSpan>{' '}
-          <a href={frontmatter.publishedUrl}>{frontmatter.publishedUrl}</a>
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="details">
+          <p>
+            <BoldCapsSpan>Client:</BoldCapsSpan> {frontmatter.clientName}
+          </p>
+          <p>
+            <BoldCapsSpan>Technology:</BoldCapsSpan> {frontmatter.technology}
+          </p>
+          <p>
+            <BoldCapsSpan>Url:</BoldCapsSpan>{' '}
+            <a href={frontmatter.publishedUrl}>{frontmatter.publishedUrl}</a>
+          </p>
+        </div>
+        <div
+          className="description"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
         <p>
           {prev && (
             <Link to={prev.frontmatter.path}>
@@ -45,7 +76,7 @@ const Project = ({ data, pageContext }) => {
             </Link>
           )}
         </p>
-      </article>
+      </ProjectDetails>
     </Layout>
   )
 }
