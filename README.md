@@ -26,7 +26,8 @@
     
     Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
     
-
+## 💨 Netlify Deploy Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0542d8c6-3ed8-467b-a70b-397f34e0ed23/deploy-status)](https://app.netlify.com/sites/trusting-cori-576308/deploys)
 
 ## 💫 Deploy
 
