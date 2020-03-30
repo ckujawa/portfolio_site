@@ -1,5 +1,5 @@
 ---
-path: /blog/node-version
+path: /node-version
 date: 2020-03-30T18:15:13.277Z
 title: Specifying a NodeJs Version on Netlify
 tags:
