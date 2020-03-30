@@ -64,6 +64,9 @@ const StyledBurgerMenu = styled.div`
         ul {
             display: flex;
             width: auto;
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
         }
 
         .menu-item{
