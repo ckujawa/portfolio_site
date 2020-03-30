@@ -38,19 +38,17 @@ export default ({ data }) => (
   <Layout>
     <div>
       {data.allFile.nodes.map(({ id, childMarkdownRemark }) => {
-        {
-          const { frontmatter } = childMarkdownRemark
-          return (
-            <Teaser key={id}>
-              <h2>
-                <Link to={frontmatter.path}>{frontmatter.title}</Link>
-              </h2>
-              <h4>By: {frontmatter.author}</h4>
-              <h4>{frontmatter.date}</h4>
-              <p>{frontmatter.excerpt}</p>
-            </Teaser>
-          )
-        }
+        const { frontmatter } = childMarkdownRemark
+        return (
+          <Teaser key={id}>
+            <h2>
+              <Link to={frontmatter.path}>{frontmatter.title}</Link>
+            </h2>
+            <h4>By: {frontmatter.author}</h4>
+            <h4>{frontmatter.date}</h4>
+            <p>{frontmatter.excerpt}</p>
+          </Teaser>
+        )
       })}
     </div>
   </Layout>

@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import { Centered_H2, BoldCapsSpan } from '../components/StyledTypography'
+import { CenteredH2, BoldCapsSpan } from '../components/StyledTypography'
 
 const ProjectDetails = styled.article`
   width: 90%;
@@ -43,7 +43,7 @@ const Project = ({ data, pageContext }) => {
   return (
     <Layout>
       <Helmet title={`${title} - My Blog`} />
-      <Centered_H2>{frontmatter.jobName}</Centered_H2>
+      <CenteredH2>{frontmatter.jobName}</CenteredH2>
       <ProjectDetails>
         <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
         <div className="details">
