@@ -1,6 +1,6 @@
 ---
 path: /new_horizons
-date: 2018-11-08T00:13:37.632Z
+date: '2018-11-08T00:13:37.632Z'
 title: New Horizons
 tags: ["freelancing", "web development", "html", "css", "javascript", "Gatsby",
   "React", "eCommerce", "services"]

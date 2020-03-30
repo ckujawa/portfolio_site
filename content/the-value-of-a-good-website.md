@@ -1,6 +1,6 @@
 ---
 path: /value
-date: 2018-11-14T14:59:29.803Z
+date: '2018-11-14T14:59:29.803Z'
 title: The Value of a Good Website
 tags:
   - website
