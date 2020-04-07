@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import Layout from '../components/layout'
+import { Layout } from '../components/layout'
 import styled from 'styled-components'
 
 const PostList = styled.ul`

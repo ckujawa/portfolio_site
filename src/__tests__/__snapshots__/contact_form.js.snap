@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm renders_correctly 1`] = `
+<div
+  className="sc-AxjAm fozpyD"
+>
+  <form
+    method="POST"
+    name="contact"
+    netlify={true}
+    netlify-honeypot="last-name"
+  >
+    <input
+      name="form-name"
+      type="hidden"
+      value="contact"
+    />
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <input
+        id="name"
+        name="name"
+        required={true}
+        type="text"
+      />
+      <label
+        htmlFor="name"
+      >
+        Your Name
+      </label>
+    </div>
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <input
+        id="last-name"
+        name="last-name"
+      />
+      <label
+        htmlFor="last-name"
+      >
+        Your Last Name
+      </label>
+    </div>
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <input
+        id="email"
+        name="email"
+        required={true}
+        type="email"
+      />
+      <label
+        htmlFor="email"
+      >
+        Email Address
+      </label>
+    </div>
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <input
+        id="phone"
+        name="phone"
+        required={true}
+        type="tel"
+      />
+      <label
+        htmlFor="phone"
+      >
+        Phone Number
+      </label>
+    </div>
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <textarea
+        columns="50"
+        id="request"
+        name="request"
+        required={true}
+        rows="4"
+      />
+      <label
+        htmlFor="request"
+      >
+        Your Request
+      </label>
+    </div>
+    <div
+      className="sc-AxirZ hyAzeX"
+    >
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+    <div
+      netlify-recaptcha={true}
+    />
+  </form>
+</div>
+`;
