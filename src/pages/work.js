@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby-link'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
@@ -19,7 +19,27 @@ export const query = graphql`
             path
             date
             jobName
-            technology
+            technology            <JobDataWrapper>
+              <p>
+                <BoldCapsSpan>Client Name:</BoldCapsSpan>{' '}
+                {frontmatter.clientName}
+              </p>
+              <p>
+                <BoldCapsSpan>Platform:</BoldCapsSpan>{' '}
+                {Capitalize(frontmatter.technology)}
+              </p>
+              {frontmatter.publishedUrl === null ||
+              frontmatter.publishedUrl === '' ? (
+                <p>This project is not currently available online</p>
+              ) : (
+                <p>
+                  <BoldCapsSpan>Url:</BoldCapsSpan>{' '}
+                  <a href={frontmatter.publishedUrl}>
+                    {frontmatter.publishedUrl}
+                  </a>
+                </p>
+              )}
+            </JobDataWrapper>
             clientName
             publishedUrl
             featuredImage {

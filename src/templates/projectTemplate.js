@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import { Layout } from '../components/layout'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
