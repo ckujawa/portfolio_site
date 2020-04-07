@@ -19,27 +19,7 @@ export const query = graphql`
             path
             date
             jobName
-            technology            <JobDataWrapper>
-              <p>
-                <BoldCapsSpan>Client Name:</BoldCapsSpan>{' '}
-                {frontmatter.clientName}
-              </p>
-              <p>
-                <BoldCapsSpan>Platform:</BoldCapsSpan>{' '}
-                {Capitalize(frontmatter.technology)}
-              </p>
-              {frontmatter.publishedUrl === null ||
-              frontmatter.publishedUrl === '' ? (
-                <p>This project is not currently available online</p>
-              ) : (
-                <p>
-                  <BoldCapsSpan>Url:</BoldCapsSpan>{' '}
-                  <a href={frontmatter.publishedUrl}>
-                    {frontmatter.publishedUrl}
-                  </a>
-                </p>
-              )}
-            </JobDataWrapper>
+            technology
             clientName
             publishedUrl
             featuredImage {
