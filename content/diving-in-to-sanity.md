@@ -4,7 +4,6 @@ date: 2020-11-18T00:10:13.194Z
 title: Diving in to Sanity
 tags:
   - Sanity.io
-  - ''
 author: Chris Kujawa
 excerpt: >-
   After hearing about Sanity.io quite often, I decided to give it a try on a new
