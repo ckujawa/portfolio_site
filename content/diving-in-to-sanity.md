@@ -1,5 +1,5 @@
 ---
-path: sanity
+path: /sanity
 date: 2020-11-18T00:10:13.194Z
 title: Diving in to Sanity
 tags:
