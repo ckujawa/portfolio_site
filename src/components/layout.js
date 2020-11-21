@@ -7,8 +7,10 @@ import { GlobalStyle } from '../components/global'
 import styled from 'styled-components'
 
 const ChildContainer = styled.div`
-  background: #d6defa;
   width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   min-height: calc(100vh - 150px);
   padding: 1.5rem;
 `

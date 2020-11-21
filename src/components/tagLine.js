@@ -3,6 +3,8 @@ import Link from "gatsby-link"
 import styled from "styled-components"
 
 const TagsBlock = styled.div`
+    margin-top: 2rem;
+
     a {
         padding: .2em;
     }

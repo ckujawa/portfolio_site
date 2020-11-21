@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: Lato sans-serif;
         font-size: 1em;
+        background: #d6defa;
     }
 
     h1, h2, h3, h4, h5, h6 {
