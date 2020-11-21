@@ -71,6 +71,26 @@ const StyledBurgerMenu = styled.div`
 
         .menu-item{
             color: white;
+
+            :hover{
+              position: relative;
+              transition: all 0.02s ease-in-out;
+              padding: 0;
+              &:before,
+              &:after{
+                content: "";
+                position: absolute;
+                bottom:-10px;
+                left: 0;
+                right: 0;
+                width: 50%;
+                height: 3px;
+                transition: all 0.02s ease-in-ou;
+                transition-duration: 0.752;
+                opacity: 0;
+                background-color: #ef3c27;
+              }
+            }
         }
         
     `}

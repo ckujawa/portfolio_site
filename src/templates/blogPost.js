@@ -2,9 +2,11 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import RehypeReact from 'rehype-react'
 import { graphql } from 'gatsby'
 import { Layout } from '../components/layout'
 import TagLine from '../components/tagLine'
+import {Title, Paragraph, Image, ImageDiv, Code, Pre } from '../components/blog_elements'
 
 const TitleBlock = styled.div`
     margin-bottom: 1rem;
@@ -21,9 +23,21 @@ const TitleBlock = styled.div`
     }
 `
 
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: {
+    h1: Title,
+    p: Paragraph,
+    img: Image,
+    code: Code,
+    "image-div": ImageDiv,
+    pre: Pre
+  }
+}).Compiler;
+
 const Template = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-  const { frontmatter, html } = post
+  const { frontmatter, htmlAst } = post
   const { title, date } = frontmatter
   const { next, prev } = pageContext
 
@@ -38,7 +52,7 @@ const Template = ({ data, location, pageContext }) => {
             <h4>By: {frontmatter.author}</h4>
             <h4>{date}</h4>
           </TitleBlock>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          {renderAst(htmlAst)}
           <TagLine tags={frontmatter.tags} />
           <p>
             {prev && (
@@ -63,7 +77,7 @@ const Template = ({ data, location, pageContext }) => {
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      htmlAst
       frontmatter {
         title
         date(formatString: "MMMM, DD, YYYY")

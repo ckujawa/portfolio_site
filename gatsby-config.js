@@ -5,9 +5,22 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve:  `gatsby-remark-images`,
+              options: {
+                maxWidth: 640,
+                wrapperStyle: 'margin: 1rem auto;',
+              }
+          }
+        ]
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     {
